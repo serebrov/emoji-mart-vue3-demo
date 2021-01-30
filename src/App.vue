@@ -16,6 +16,8 @@
 
 <script>
 import data from "emoji-mart-vue-fast/data/all.json";
+
+// Note: component needs to be imported from /src subfolder:
 import { Picker, EmojiIndex } from "emoji-mart-vue-fast/src";
 import "emoji-mart-vue-fast/css/emoji-mart.css";
 
