@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "core-js": "^3.6.5",
-    "emoji-mart-vue-fast": "^7.0.7",
+    "emoji-mart-vue-fast": "^8.0.1",
     "vue": "^3.0.0"
   },
   "devDependencies": {

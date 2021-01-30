@@ -1,31 +1,30 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <!--HelloWorld msg="Welcome to Your Vue.js App"/-->
-
   <div class="row">
-    <StaticPicker :data="emojiIndex" set="twitter" @select="showEmoji" />
+    <img alt="Vue logo" src="./assets/logo.png" />
   </div>
 
-  <div class="row">{{ emojisOutput }}</div>
+  <div class="row">
+    <Picker :data="emojiIndex" set="twitter" @select="showEmoji" />
+  </div>
+
+  <div class="row">
+    <div>
+      {{ emojisOutput }}
+    </div>
+  </div>
 </template>
 
 <script>
-/* import HelloWorld from './components/HelloWorld.vue' */
-
-/* import data from "emoji-mart-vue-fast/data/all.json"; */
-/* import { Picker, EmojiIndex } from "emoji-mart-vue-fast"; */
-/* import "emoji-mart-vue-fast/css/emoji-mart.css"; */
-import data from "../../emoji-mart-vue/data/all.json";
-import { StaticPicker, EmojiIndex } from "../../emoji-mart-vue/src";
-import "../../emoji-mart-vue/css/emoji-mart.css";
+import data from "emoji-mart-vue-fast/data/all.json";
+import { Picker, EmojiIndex } from "emoji-mart-vue-fast/src";
+import "emoji-mart-vue-fast/css/emoji-mart.css";
 
 let emojiIndex = new EmojiIndex(data);
 
 export default {
   name: "App",
   components: {
-    /* HelloWorld, */
-    StaticPicker
+    Picker
   },
 
   data() {
@@ -48,8 +47,15 @@ export default {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+.row {
+  display: flex;
+}
+
+.row > * {
+  margin: auto;
 }
 </style>
