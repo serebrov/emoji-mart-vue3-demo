@@ -1,6 +1,6 @@
 # emoji-mart-demo-vue3
 
-Demo Vue 3 app for [emoji-mart-vue-fast component](https://github.com/serebrov/emoji-mart-vue).
+Demo Vue 3 app for [emoji-mart-vue-fast component](https://github.com/serebrov/emoji-mart-vue): https://serebrov.github.io/emoji-mart-vue3-demo/
 
 App was generated using [vue-cli](https://cli.vuejs.org/).
 
