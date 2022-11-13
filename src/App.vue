@@ -12,36 +12,54 @@
       {{ emojisOutput }}
     </div>
   </div>
+
+  <div class="row">
+    <emoji
+      data="emojiIndex"
+      :emoji="santaEmojiObject"
+      :size="32"
+      @click="showEmoji"
+    />
+  </div>
 </template>
 
 <script>
-import data from "emoji-mart-vue-fast/data/all.json";
+import data from 'emoji-mart-vue-fast/data/all.json'
 
 // Note: component needs to be imported from /src subfolder:
-import { Picker, EmojiIndex } from "emoji-mart-vue-fast/src";
-import "emoji-mart-vue-fast/css/emoji-mart.css";
+import { Picker, Emoji, EmojiIndex } from 'emoji-mart-vue-fast/src'
+// Import version to test locally:
+// import { Picker, Emoji, EmojiIndex } from '../../emoji-mart-vue/src'
+import 'emoji-mart-vue-fast/css/emoji-mart.css'
 
-let emojiIndex = new EmojiIndex(data);
+let emojiIndex = new EmojiIndex(data)
 
 export default {
-  name: "App",
+  name: 'App',
   components: {
-    Picker
+    Picker,
+    Emoji,
   },
 
   data() {
     return {
       emojiIndex: emojiIndex,
-      emojisOutput: ""
-    };
+      emojisOutput: '',
+    }
   },
 
   methods: {
     showEmoji(emoji) {
-      this.emojisOutput = this.emojisOutput + emoji.native;
-    }
-  }
-};
+      this.emojisOutput = this.emojisOutput + emoji.native
+    },
+  },
+
+  computed: {
+    santaEmojiObject() {
+      return emojiIndex.findEmoji(':santa:')
+    },
+  },
+}
 </script>
 
 <style>
