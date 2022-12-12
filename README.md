@@ -36,5 +36,16 @@ npm run build
 npm run lint
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## Update live version
+
+To update live version at https://serebrov.github.io/emoji-mart-vue3-demo/, run:
+
+```shell
+git checkout build
+git merge master
+npm run build
+
+git add .
+git commit -m "Rebuild live example."
+git push
+```
